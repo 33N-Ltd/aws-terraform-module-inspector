@@ -3,3 +3,4 @@ resource "aws_cloudwatch_event_rule" "inspector_event_schedule" {
   description         = "Trigger an Inspector Assessment"
   schedule_expression = var.schedule_expression
 }
+
