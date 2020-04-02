@@ -5,3 +5,4 @@ resource "aws_iam_policy" "inspector_policy" {
 
   policy = data.aws_iam_policy_document.inspector_event_role_policy.json
 }
+
