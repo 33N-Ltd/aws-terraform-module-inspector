@@ -50,27 +50,28 @@ variable "security_best_practices_ruleset" {
 }
 
 variable "common_tags" {
-  type = map(string)
+  type        = map(string)
 }
 
-#locals {
-#  assessment_ruleset = compact([
-#    var.cve_ruleset ? "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-kZGCqcE1" : "",
-#    var.cis_ruleset ? "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-IeCjwf1W" : "",
-#    var.network_reachability_ruleset ? "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-AizSYyNq" : "",
-#    var.security_best_practices_ruleset ? "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-XApUiSaP" : "",
-#  ]
-#  )
-#}
+locals {
+ assessment_ruleset = compact([
+   var.cve_ruleset ?                      "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-kZGCqcE1" : "",
+   var.cis_ruleset ?                      "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-IeCjwf1W" : "",
+   var.network_reachability_ruleset ?     "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-AizSYyNq" : "",
+   var.security_best_practices_ruleset ?  "arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-XApUiSaP" : "",
+ ]
+ )
+}
+
 # To obtain the latest ARN of rule set please refer to:
 # https://docs.aws.amazon.com/inspector/latest/userguide/inspector_rules-arns.html
 # EU (London)
-#  Common Vulnerabilities and Exposures	                    arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-kZGCqcE1
-#  CIS Operating System Security Configuration Benchmarks	arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-IeCjwf1W
-#  Network Reachability	                                    arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-AizSYyNq
-#  Security Best Practices	                                arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-XApUiSaP
+#  Common Vulnerabilities and Exposures	                      arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-kZGCqcE1
+#  CIS Operating System Security Configuration Benchmarks	    arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-IeCjwf1W
+#  Network Reachability	                                      arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-AizSYyNq
+#  Security Best Practices	                                  arn:aws:inspector:eu-west-2:146838936955:rulespackage/0-XApUiSaP
 # EU (Ireland)
-#Common Vulnerabilities and Exposures	                    arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-ubA5XvBh
-#CIS Operating System Security Configuration Benchmarks	    arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-sJBhCr0F
-#Network Reachability	                                    arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-SPzU33xe
-#Security Best Practices	                                arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-SnojL3Z6
+#   Common Vulnerabilities and Exposures	                    arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-ubA5XvBh
+#   CIS Operating System Security Configuration Benchmarks	  arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-sJBhCr0F
+#   Network Reachability	                                    arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-SPzU33xe
+#   Security Best Practices	                                  arn:aws:inspector:eu-west-1:357557129151:rulespackage/0-SnojL3Z6

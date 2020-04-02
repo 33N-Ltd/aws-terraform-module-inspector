@@ -6,7 +6,7 @@ resource "aws_inspector_assessment_template" "assessment" {
   target_arn         = aws_inspector_assessment_target.assessment.arn
   duration           = var.assessment_duration
   rules_package_arns = data.aws_inspector_rules_packages.rules.arns
-  //rules_package_arns = local.assessment_ruleset
+  # //rules_package_arns = local.assessment_ruleset
 }
 
 resource "aws_inspector_assessment_target" "assessment" {
@@ -17,4 +17,3 @@ resource "aws_inspector_assessment_target" "assessment" {
 resource "aws_inspector_resource_group" "resource_group" {
   tags = var.resource_tags
 }
-
